@@ -64,18 +64,12 @@ func findDirTree(out *bytes.Buffer, higherDir string, prefix []string, printFile
 		return
 	}
 
-	// fmt.Println("\n", files, "\n")
-
-	// toPrint = make([]string, 100)
 	for _, file := range files {
 		if printFiles || isDirectory(higherDir+"/"+file.Name()) {
 			toPrint = append(toPrint, file.Name())
-			// fmt.Println(higherDir+"/"+file.Name())
 		}
 	}
 
-	// fmt.Println("\t", toPrint)
-	
 	dirLen = len(toPrint)
 	i = 0
 	for i < dirLen {
